@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.title
+{
+  margin-top: 10px;
+  margin-left: 550px;
+  font-family: 'Bebas Neue', cursive;
+}
+.text
+{
+  margin-top: 10px;
+  color: black;
+  font-size: 50px;
+}
+.text2
+{
+  margin-top: 10px;
+  margin-left: 600px;
+  font-family: 'Bebas Neue', cursive;
+}
+input
+{
+  width: 50%;
+}
+#icon
+{
+  font-size: 44px;
+}
+#logo
+{
+  margin-left: 480px;
+}
+#button
+{
+  margin-left: 710px;
+  font-size: 20px;
+  font-family: 'Koulen', cursive;
+  border: white;
+}
+form
+{
+  margin-top: 40px;
+  margin-left: 530px;
+}
+input
+{
+  margin-right: 20px;
+  border: solid 1px blue;
+}
+.card
+{
+  width: 18rem;
+}
+#message
+{
+  margin-left: 530px;
+  margin-top: 80px;
+  font-family: 'Koulen', cursive;
+}
+#con
+{
+  margin: 40px 50px 30px 40px;
+  display: inline-block;
+}
+#search-img
+{
+  height: 350px;
+  margin-left: 600px;
+  margin-top: 150px;
+}
