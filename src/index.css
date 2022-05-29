@@ -62,9 +62,15 @@ input
 {
   width: 18rem;
 }
-#message
+#message2
 {
   margin-left: 530px;
+  margin-top: 80px;
+  font-family: 'Koulen', cursive;
+}
+#message1
+{
+  margin-left: 650px;
   margin-top: 80px;
   font-family: 'Koulen', cursive;
 }
@@ -78,4 +84,8 @@ input
   height: 350px;
   margin-left: 600px;
   margin-top: 150px;
+}
+.home
+{
+  width: 100%;
 }

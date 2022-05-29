@@ -8,6 +8,7 @@ class Search extends Component {
         clicked:false,
         response:"",
         movieName:"",
+        result:false
      } 
      handleSubmit = (e) =>
      {
@@ -19,7 +20,7 @@ class Search extends Component {
            this.setState({clicked:true})
            console.log(this.state.clicked)
         this.componentDidMount(name)
-        this.setState({movieName:name})
+        this.setState({movieName:name,result:true})
      }
     componentDidMount(props)
      {
@@ -27,12 +28,16 @@ class Search extends Component {
        (movieNameBySearch === undefined) ? movieNameBySearch="" : movieNameBySearch = props;
        console.log(movieNameBySearch)
          fetch(`https://www.omdbapi.com/?s=${movieNameBySearch}&apikey=c3e01bc4`).then(res => res.json()).then(data => {
-             this.setState({movies: data.Search,response:data.Response})
+             this.setState({movies: data.Search,response:data.Response,result:false})
          })
      }
     render() { 
         document.body.style.background="#a8c0ff"
-        let movieList = (this.state.response === "False") ? <h1 id='message'><i className="fa-solid fa-earth-americas"></i> Oops, No Results For  {this.state.movieName}</h1> : this.state.movies.map(data => {
+        let movieList = (this.state.result) ? 
+        <h1 id='message1'> Loading..... Wait</h1> :
+        ((this.state.response === "False") ? 
+          <h1 id='message2'><i className="fa-solid fa-earth-americas"></i> Oops, No Results For  {this.state.movieName}</h1> :
+        this.state.movies.map(data => {
             return <Movies 
                       key={data.imdbID} 
                       name={data.Title} 
@@ -40,7 +45,7 @@ class Search extends Component {
                       year={data.Year} 
                       type={data.Type}
                     />
-        }) 
+        }) )
         return (
             <React.Fragment>
                <h1 className='text text2'>Search Movie By Name <i id='icon' className="fa-solid fa-magnifying-glass"></i></h1>
